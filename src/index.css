@@ -1,0 +1,369 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Noor ul Quran - Islamic Design System
+   Unique Islamic color palette with teal, gold, and warm sunset tones
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Islamic teal/cyan as primary */
+    --background: 0 0% 98%;
+    --foreground: 200 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 20%;
+
+    /* Beautiful Islamic teal */
+    --primary: 189 55% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm cream secondary */
+    --secondary: 40 30% 95%;
+    --secondary-foreground: 200 25% 20%;
+
+    /* Cloudy muted background */
+    --muted: 210 20% 94%;
+    --muted-foreground: 200 15% 45%;
+
+    /* Gold accent */
+    --accent: 38 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 189 55% 35%;
+
+    --radius: 0.5rem;
+
+    /* Islamic specific colors */
+    --islamic-teal: 189 55% 35%;
+    --islamic-teal-light: 189 45% 50%;
+    --islamic-gold: 38 70% 50%;
+    --islamic-gold-light: 42 80% 65%;
+    --sunset-orange: 25 90% 55%;
+    --sunset-warm: 30 85% 60%;
+    --cloud-white: 210 20% 96%;
+    --hero-overlay: 25 60% 15%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 200 25% 20%;
+    --sidebar-primary: 189 55% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 30% 95%;
+    --sidebar-accent-foreground: 200 25% 20%;
+    --sidebar-border: 200 20% 88%;
+    --sidebar-ring: 189 55% 35%;
+  }
+
+  .dark {
+    --background: 200 30% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 200 25% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 200 25% 12%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 189 55% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 20% 18%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 200 20% 18%;
+    --muted-foreground: 200 15% 60%;
+
+    --accent: 38 70% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 20%;
+    --input: 200 20% 20%;
+    --ring: 189 55% 45%;
+
+    --islamic-teal: 189 55% 45%;
+    --islamic-teal-light: 189 45% 55%;
+    --islamic-gold: 38 70% 55%;
+    --islamic-gold-light: 42 80% 70%;
+
+    --sidebar-background: 200 25% 12%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 189 55% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 20% 18%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 200 20% 20%;
+    --sidebar-ring: 189 55% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Amiri', serif;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary text-center mb-8;
+    font-family: 'Amiri', serif;
+  }
+
+  .cloud-section {
+    background-image: var(--cloud-bg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-title {
+    font-family: 'Amiri', serif;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.02em;
+  }
+
+  .hero-tagline {
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .course-card-glass {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  /* Scroll-triggered animations */
+  .scroll-animate {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-animate.visible {
+    opacity: 1;
+  }
+
+  .scroll-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+
+  .scroll-fade-in.visible {
+    opacity: 1;
+  }
+
+  .scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .water-drop-falling {
+    background: radial-gradient(ellipse at 30% 30%, rgba(173, 216, 230, 0.9), rgba(135, 206, 250, 0.6));
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 
+      0 0 8px rgba(173, 216, 230, 0.8),
+      inset -1px -1px 3px rgba(0, 0, 0, 0.15),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+      0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: waterDropFall ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .water-drop-falling::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 35%;
+    height: 35%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.95), transparent);
+    border-radius: 50%;
+    filter: blur(1px);
+  }
+
+  .water-drop-falling::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 25%;
+    height: 25%;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    filter: blur(0.5px);
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  }
+
+  @keyframes waterDropFall {
+    0% {
+      opacity: 0;
+      transform: translateY(-5px) scale(0.7);
+    }
+    3% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    5% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    35% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(2px) scale(1);
+    }
+    45% {
+      opacity: 1;
+      transform: translateY(5px) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(10px) scale(1);
+    }
+    95% {
+      opacity: 0.8;
+      transform: translateY(500px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(550px) scale(0.9);
+    }
+  }
+}
